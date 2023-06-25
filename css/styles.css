@@ -1,0 +1,23 @@
+body {
+  background: url('../img/bg.jpg') no-repeat center;
+}
+
+.dc-color-purple {
+  background-color: rgb(153, 0, 204);
+  color: #FFF;
+}
+
+.dc-color-purple:hover {
+  background-color: rgb(153, 0, 204, 0.85);
+  color: #FFF;
+}
+
+.dc-color-orange{
+  background-color: rgb(255, 153, 0);
+  color: #FFF;
+}
+
+.dc-color-orange:hover{
+  background-color: rgb(255, 153, 0,0.85);
+  color: #FFF;
+}

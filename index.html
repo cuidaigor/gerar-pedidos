@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link id="favicon" rel="shortcut icon" href="img/icon.png">
+
+  <title>D Color - Gerar Pedido</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <div class="container vw-100 d-flex justify-content-center align-items-center">
+    <div class="card w-75 p-3 my-5">
+      <h6>Dados do Cliente</h6>
+      <form id="gerar-pedido" class="row g-3">
+        <div class="col-md-6 form-floating">
+          <input type="text" class="form-control" id="client" name="client" placeholder="Exemplo" required>
+          <label for="client" class="form-label">Cliente</label>
+        </div>
+        <div class="col-md-6 form-floating">
+          <input type="text" class="form-control" id="id-client" name="id-client" placeholder="Exemplo">
+          <label for="id-client" class="form-label">CPF/CNPJ</label>
+        </div>
+        <div class="col-md-6 form-floating">
+          <input type="text" class="form-control" id="whatsapp" name="whatsapp" placeholder="Exemplo">
+          <label for="whatsapp" class="form-label">Whatsapp</label>
+        </div>
+        <div class="col-md-6 form-floating">
+          <input type="email" class="form-control" id="email" name="email" placeholder="Exemplo">
+          <label for="email" class="form-label">Email</label>
+        </div>
+        <div class="col-10 form-floating">
+          <input type="text" class="form-control" id="address" name="address" placeholder="Rua Francisco Tota">
+          <label for="address" class="form-label">Endereço</label>
+        </div>
+        <div class="col-2 form-floating">
+          <input type="text" class="form-control" id="address-number" name="address-number" placeholder="116">
+          <label for="address-number" class="form-label">Número</label>
+        </div>
+        <div class="col-6 form-floating">
+          <input type="text" class="form-control" id="neighborhood" name="neighborhood" placeholder="Centro">
+          <label for="neighborhood" class="form-label">Bairro</label>
+        </div>
+        <div class="col-6 form-floating">
+          <input type="text" class="form-control" id="complement" name="complement" placeholder="Próximo a Praça">
+          <label for="complement" class="form-label">Complemento</label>
+        </div>
+        <div class="col-md-5 form-floating">
+          <input type="text" class="form-control" id="city" name="city" required placeholder="Teixeira">
+          <label for="city" class="form-label">Cidade</label>
+        </div>
+        <div class="col-md-4 form-floating">
+          <select id="state" name="state" class="form-select" placeholder="PB">
+            <option selected value="PB">Paraíba</option>
+            <option value="PB">Pernambuco</option>
+            <option> ----------------- </option>
+            <option value="AC">Acre</option>
+            <option value="AL">Alagoas</option>
+            <option value="AP">Amapá</option>
+            <option value="AM">Amazonas</option>
+            <option value="BA">Bahia</option>
+            <option value="CE">Ceará</option>
+            <option value="ES">Espírito Santo</option>
+            <option value="GO">Goiás</option>
+            <option value="MA">Maranhão</option>
+            <option value="MT">Mato Grosso</option>
+            <option value="MS">Mato Grosso do Sul</option>
+            <option value="MG">Minas Gerais</option>
+            <option value="PA">Pará</option>
+            <option value="PR">Paraná</option>
+            <option value="PI">Piauí</option>
+            <option value="RJ">Rio de Janeiro</option>
+            <option value="RN">Rio Grande do Norte</option>
+            <option value="RS">Rio Grande do Sul</option>
+            <option value="RO">Rondônia</option>
+            <option value="RR">Roraima</option>
+            <option value="SC">Santa Catarina</option>
+            <option value="SP">São Paulo</option>
+            <option value="SE">Sergipe</option>
+            <option value="TO">Tocantins</option>
+            <option value="">Internacional</option>
+          </select>
+          <label for="state" class="form-label">Estado</label>
+        </div>
+        <div class="col-md-3 form-floating">
+          <input type="text" class="form-control" id="cep" name="cep" placeholder="CEP">
+          <label for="cep" class="form-label">CEP</label>
+        </div>
+        <hr class="p-0 m-0 mt-2">
+        <h6>Detalhes do Pedido</h6>
+        <div class="col-12">
+          <label for="idOrder" class="form-label">ID do Pedido</label>
+          <input type="text" class="form-control" id="idOrder" name="idOrder" value="0623">
+        </div>
+        <div class="col-12">
+          <label for="item-1" class="form-label">Item</label>
+          <input type="text" class="form-control" id="item-1" name="item-1" placeholder="Adesivo Brilho - 100cm x 100cm - Verniz - Recorte">
+        </div>
+        <div class="col-4">
+          <label for="amount-item-1" class="form-label">Quantidade</label>
+          <input type="number" class="form-control" id="amount-item-1" name="amount-item-1" placeholder="1">
+        </div>
+        <div class="col-4">
+          <label for="unitary-item-1" class="form-label">V. Unitário</label>
+          <div class="input-group">
+            <span class="input-group-text" id="unitary-item-group-1">R$</span>
+            <input type="text" class="form-control input-currency" placeholder="90,00" aria-label="90,00" aria-describedby="unitary-item-group-1" id="unitary-item-1" name="unitary-item-1">
+          </div>
+        </div>
+        <div class="col-4">
+          <label for="total-item-1" class="form-label">V. Total</label>
+          <div class="input-group">
+            <span class="input-group-text" id="total-item-group-1">R$</span>
+            <input type="text" class="form-control input-currency" placeholder="90,00" aria-label="90,00" aria-describedby="total-item-group-1" id="total-item-1" name="total-item-1">
+          </div>
+        </div>
+        <hr class="p-0 m-0 my-2">
+        <div id="newItem" class="row"></div>
+        <button type="button" class="btn btn-secondary m-0" id="add-items">+ Mais itens</button>
+        <hr class="p-0 m-0 mt-2">
+        <div class="col-4">
+          <label for="installation-item" class="form-label">Taxa de Instalação</label>
+          <div class="input-group">
+            <span class="input-group-text" id="installation-item-group">R$</span>
+            <input type="text" class="form-control" placeholder="50,00" aria-label="50,00" aria-describedby="installation-item-group" id="installation-item" name="installation-item">
+          </div>
+        </div>
+        <div class="col-4">
+          <label for="delivery-item" class="form-label">Taxa de Entrega</label>
+          <div class="input-group">
+            <span class="input-group-text" id="delivery-item-group">R$</span>
+            <input type="text" class="form-control" placeholder="5,00" aria-label="5,00" aria-describedby="delivery-item-group" id="delivery-item" name="delivery-item">
+          </div>
+        </div>
+        <div class="col-4">
+          <label for="discount-item" class="form-label">Descontos</label>
+          <div class="input-group">
+            <span class="input-group-text" id="discount-item-group">R$</span>
+            <input type="text" class="form-control" placeholder="10,00" aria-label="10,00" aria-describedby="discount-item-group" id="discount-item" name="discount-item">
+          </div>
+        </div>
+        <div class="col-12">
+          <label for="final-item" class="form-label fw-bold">VALOR TOTAL</label>
+          <div class="input-group">
+            <span class="input-group-text" id="final-item-group">R$</span>
+            <input type="text" class="form-control" placeholder="135,00" aria-label="50,00" aria-describedby="final-item-group" id="final-item" name="final-item">
+          </div>
+        </div>
+        <hr class="p-0 m-0 my-2">
+        <div class="col-6">
+          <button type="reset" class="btn w-100 dc-color-orange">Limpar</button>
+        </div>
+        <div class="col-6">
+          <button type="submit" class="btn w-100 dc-color-purple">Imprimir</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/scripts.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+</body>
+</html>
