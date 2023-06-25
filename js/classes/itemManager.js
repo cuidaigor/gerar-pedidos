@@ -109,6 +109,7 @@ class ItemManager {
 
     amountInput.addEventListener('input', () => {
       this.dynamicCalculator.calculateTotal(unitaryInput, totalInput, amountInput);
+      this.dynamicCalculator.calculateFinalItem();
     });
 
     //Cria o Valor Unitário
@@ -120,7 +121,7 @@ class ItemManager {
     const unitarySpan = this.createSpanElement(['input-group-text'], `unitary-item-group-${this.counterItems}`, 'R$');
     const unitaryInput = this.createInputElement(
       'text',
-      ['form-control', 'input-currency'],
+      ['form-control', 'input-soma'],
       unitaryId,
       unitaryId,
       '90,00',
@@ -136,6 +137,7 @@ class ItemManager {
 
     unitaryInput.addEventListener('input', () => {
       this.dynamicCalculator.calculateTotal(unitaryInput, totalInput, amountInput);
+      this.dynamicCalculator.calculateFinalItem();
     });
 
     //Cria o Valor Total
@@ -147,7 +149,7 @@ class ItemManager {
     const totalSpan = this.createSpanElement(['input-group-text'], `total-item-group-${this.counterItems}`, 'R$');
     const totalInput = this.createInputElement(
       'text',
-      ['form-control', 'input-currency'],
+      ['form-control', 'input-currency', 'input-soma'],
       totalId,
       totalId,
       '90,00',
@@ -163,6 +165,7 @@ class ItemManager {
 
     totalInput.addEventListener('input', () => {
       this.dynamicCalculator.calculateUnitary(unitaryInput, totalInput, amountInput);
+      this.dynamicCalculator.calculateFinalItem();
     });
 
     //Cria botão para remover

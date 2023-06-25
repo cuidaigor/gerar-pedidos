@@ -59,3 +59,4 @@ const final = new InputFormatter(
 //Calculo do Valor Unitário e Valor Total do item existente
 const dynamicCalculator = new DynamicCalculator();
 dynamicCalculator.calculateInputExists();
+dynamicCalculator.calculateFinalItem();
