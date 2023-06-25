@@ -1,4 +1,5 @@
 import Formatter from "./formatter.js";
+import DynamicCalculator from "./dynamicCalculator.js";
 class ItemManager {
   constructor() {
     this.counterItems = 2;
@@ -6,6 +7,8 @@ class ItemManager {
     this.newItemContainer = document.getElementById('newItem');
 
     this.addButton.addEventListener('click', this.addItem.bind(this));
+
+    this.dynamicCalculator = new DynamicCalculator();
   }
 
   createDivElement(classList){
@@ -104,6 +107,10 @@ class ItemManager {
     amountContainer.appendChild(amountLabel);
     amountContainer.appendChild(amountInput);
 
+    amountInput.addEventListener('input', () => {
+      this.dynamicCalculator.calculateTotal(unitaryInput, totalInput, amountInput);
+    });
+
     //Cria o Valor Unitário
     const unitaryId = `unitary-item-${this.counterItems}`;
 
@@ -127,6 +134,10 @@ class ItemManager {
     unitaryContainer.appendChild(unitaryLabel);
     unitaryContainer.appendChild(groupUnitary);
 
+    unitaryInput.addEventListener('input', () => {
+      this.dynamicCalculator.calculateTotal(unitaryInput, totalInput, amountInput);
+    });
+
     //Cria o Valor Total
     const totalId = `total-item-${this.counterItems}`;
 
@@ -149,6 +160,10 @@ class ItemManager {
     groupTotal.appendChild(totalInput);
     totalContainer.appendChild(totalLabel);
     totalContainer.appendChild(groupTotal);
+
+    totalInput.addEventListener('input', () => {
+      this.dynamicCalculator.calculateUnitary(unitaryInput, totalInput, amountInput);
+    });
 
     //Cria botão para remover
     const removeButtonContainer = this.createDivElement(['col-12', 'd-flex', 'justify-content-center']);
