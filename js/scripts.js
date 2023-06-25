@@ -54,22 +54,8 @@ const final = new InputFormatter(
   (value) => Formatter.formatarMoeda(parseFloat(value.replace(",", ".")))
 );
 
+//************************************************************************
 
-//**********************************************************************************
-
-const unitaryInput = document.getElementById('unitary-item-1');
-const totalInput = document.getElementById('total-item-1');
-const amountInput = document.getElementById('amount-item-1');
-
+//Calculo do Valor Unitário e Valor Total do item existente
 const dynamicCalculator = new DynamicCalculator();
-
-// Adiciona os event listeners para os campos de input
-unitaryInput.addEventListener('input', ()=>{
-  dynamicCalculator.calculateTotal(unitaryInput, totalInput, amountInput);
-});
-totalInput.addEventListener('input', ()=> {
-  dynamicCalculator.calculateUnitary(unitaryInput, totalInput, amountInput);
-});
-amountInput.addEventListener('input', ()=>{
-  dynamicCalculator.calculateTotal(unitaryInput, totalInput, amountInput);
-});
+dynamicCalculator.calculateInputExists();

@@ -20,4 +20,21 @@ export default class DynamicCalculator{
     const unitaryValue = totalValue / amountValue || 0;
     unitaryInput.value = Formatter.formatarMoeda(unitaryValue);
   }
+
+  calculateInputExists(){
+    const unitaryInput = document.getElementById('unitary-item-1');
+    const totalInput = document.getElementById('total-item-1');
+    const amountInput = document.getElementById('amount-item-1');
+
+    // Adiciona os event listeners para os campos de input
+    unitaryInput.addEventListener('input', ()=>{
+      this.calculateTotal(unitaryInput, totalInput, amountInput);
+    });
+    totalInput.addEventListener('input', ()=> {
+      this.calculateUnitary(unitaryInput, totalInput, amountInput);
+    });
+    amountInput.addEventListener('input', ()=>{
+      this.calculateTotal(unitaryInput, totalInput, amountInput);
+    });
+  }
 }
