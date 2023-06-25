@@ -43,4 +43,4 @@ Contribuições são bem-vindas! Se encontrar algum problema ou tiver sugestões
 
 ## Contato
 
-Para mais informações, entre em contato (mailto:srlee@cc.ci.ufpb.br).
+Para mais informações, entre em contato (srlee@cc.ci.ufpb.br).
