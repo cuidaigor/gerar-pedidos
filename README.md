@@ -25,11 +25,15 @@ O sistema será responsável por gerenciar apenas os pedidos que necessitam pass
 
 1. Clone o repositório.
 
-ˋgit clone https://github.com/cuidaigor/gerar-pedidos.gitˋ
+ˋˋˋ
+git clone https://github.com/cuidaigor/gerar-pedidos.git
+ˋˋˋ
 
 2. Navegue até o diretório do projeto.
 
-ˋcd gerar-pedidosˋ
+ˋˋˋ
+cd gerar-pedidos
+ˋˋˋ
 
 3. Abra o arquivo `index.html` em seu navegador web.
 
