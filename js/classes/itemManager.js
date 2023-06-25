@@ -1,3 +1,4 @@
+import Formatter from "./formatter.js";
 class ItemManager {
   constructor() {
     this.counterItems = 2;
@@ -190,7 +191,7 @@ class ItemManager {
   formatCurrencyInput(event) {
     let value = event.target.value;
     value = value.replace(',', '.');
-    const formattedValue = formatarMoeda(parseFloat(value));
+    const formattedValue = Formatter.formatarMoeda(parseFloat(value));
     event.target.value = formattedValue;
   }
 }
