@@ -101,7 +101,7 @@ class ItemManager {
       ['form-control'],
       amountId,
       amountId,
-      '1'
+      ''
     );
 
     amountContainer.appendChild(amountLabel);
@@ -124,7 +124,7 @@ class ItemManager {
       ['form-control', 'input-soma'],
       unitaryId,
       unitaryId,
-      '90,00',
+      '',
       '90,00',
       `unitary-item-group-${this.counterItems}`,
       this.formatCurrencyInput
@@ -152,7 +152,7 @@ class ItemManager {
       ['form-control', 'input-currency', 'input-soma'],
       totalId,
       totalId,
-      '90,00',
+      '',
       '90,00',
       `total-item-group-${this.counterItems}`,
       this.formatCurrencyInput
