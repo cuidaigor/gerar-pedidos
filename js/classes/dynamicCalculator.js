@@ -2,9 +2,7 @@ import Formatter from "./formatter.js";
 
 export default class DynamicCalculator{
   calculateTotal(unitaryInput, totalInput, amountInput) {
-    if(amountInput.value === '' || amountInput.value === 0){
-      amountInput.value = 1;
-    }
+    this.setDefaultAmount(amountInput);
     const unitaryValue = parseFloat(unitaryInput.value.replace(',', '.'));
     const amountValue = parseFloat(amountInput.value);
     const totalValue = unitaryValue * amountValue || 0;
@@ -12,13 +10,17 @@ export default class DynamicCalculator{
   }
 
   calculateUnitary(unitaryInput, totalInput, amountInput) {
-    if(amountInput.value === '' || amountInput.value === 0){
-      amountInput.value = 1;
-    }
+    this.setDefaultAmount(amountInput);
     const totalValue = parseFloat(totalInput.value.replace(',', '.'));
     const amountValue = parseFloat(amountInput.value);
     const unitaryValue = totalValue / amountValue || 0;
     unitaryInput.value = Formatter.formatarMoeda(unitaryValue);
+  }
+
+  setDefaultAmount(amountInput) {
+    if (amountInput.value === '' || amountInput.value === '0') {
+      amountInput.value = '1';
+    }
   }
 
   calculateFinalItem() {
@@ -29,8 +31,8 @@ export default class DynamicCalculator{
     const finalItem = document.getElementById('final-item');
 
     let somaItens = 0;
-    for (let i = 0; i < totalItems.length; i++) {
-      const valorItem = parseFloat(totalItems[i].value.replace(',', '.')) || 0;
+    for (const item of totalItems) {
+      const valorItem = parseFloat(item.value.replace(',', '.')) ?? 0;
       somaItens += valorItem;
     }
 
