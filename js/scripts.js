@@ -2,6 +2,7 @@ import ItemManager from './classes/itemManager.js';
 import Formatter from './classes/formatter.js';
 import InputFormatter from './classes/inputFormatter.js';
 import DynamicCalculator from './classes/dynamicCalculator.js';
+import FormPrinter from './classes/formPrinter.js';
 
 //CHAMADA DE ADIÇÃO E REMOÇÃO DE ITENS DINAMICAMENTE
 const itemManager = new ItemManager();
@@ -54,9 +55,15 @@ const final = new InputFormatter(
   (value) => Formatter.formatarMoeda(parseFloat(value.replace(",", ".")))
 );
 
-//************************************************************************
+//************************************************************************ */
 
 //Calculo do Valor Unitário e Valor Total do item existente
 const dynamicCalculator = new DynamicCalculator();
 dynamicCalculator.calculateInputExists();
 dynamicCalculator.calculateFinalItem();
+
+//************************************************************************ */
+
+// Crie uma instância da classe FormPrinter
+const formPrinter = new FormPrinter('gerar-pedido');
+
