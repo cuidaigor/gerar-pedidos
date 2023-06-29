@@ -44,10 +44,9 @@ export default class FormPrinter {
 
     try {
       this.validateForm(organizedFormValues);
-      console.log(organizedFormValues);
 
       //Chama o método para gerar o arquivo de dados
-
+      this.createDataFile(organizedFormValues);
     } catch (error) {
       console.error(error.message);
     }
@@ -235,6 +234,7 @@ export default class FormPrinter {
   }
 
   createDataFile(formValues) {
-    // Lógica para criar um arquivo data.json
+    const data = JSON.stringify(formValues);
+    localStorage.setItem('order-data', data);
   }
 }
