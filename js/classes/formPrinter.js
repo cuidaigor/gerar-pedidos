@@ -236,5 +236,6 @@ export default class FormPrinter {
   createDataFile(formValues) {
     const data = JSON.stringify(formValues);
     localStorage.setItem('order-data', data);
+    window.location.href = "order.html";
   }
 }

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DColor-Pedido#DC0000</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/feather-icons"></script>
+</head>
+<body>
+
+  <div class="px-2">
+    <div class="row">
+      <div class="col-6">
+        <img src="img/dcolor.png" style="width: 100px; display: block; margin: 0 auto;" alt="D Color">
+        <p class="fw-bold lh-sm mt-3 mb-0 text-center" style="font-size: 12px;">DCOLOR COMUNICAÇÃO VISUAL LTDA</p>
+        <p class="lh-sm text-center my-0" style="font-size: 12px;">CNPJ 42.231.543/0001-60</p>
+        <p class="lh-sm text-center my-0" style="font-size: 12px;">Praça Pedro Batista, 16 - Centro</p>
+        <p class="lh-sm text-center my-0" style="font-size: 12px;">58735-000 - Teixeira-PB</p>
+        <p class="lh-sm text-center my-0" style="font-size: 12px;"><i data-feather="message-circle" style="width: 15px;"></i> <span class="fw-bold">(83) 99655-9000</span> <i data-feather="mail" style="width: 15px;"></i> contato@dcolor.net</p>
+      </div>
+      <div class="col-6 d-flex justify-content-end align-items-center">
+        <p class="fw-bold text-end fs-6 mt-3" id="idOrderTop">Pedido #DC0000<p>
+      </div>
+    </div>
+    <div class="row border-top mt-3 d-flex align-items-center">
+      <div class="col-6 mt-2">
+        <p class="fw-bold lh-sm mb-0" style="font-size: 14px;" id="client">Paróquia de Santa Maria Madalena</p>
+        <p class="lh-sm mb-0" style="font-size: 14px;" id="id-client"><span class="fw-bold">CNPJ:</span> 09.084.385/0004-30</p>
+        <p class="lh-sm my-0" style="font-size: 14px;" id="address">Teixeira-PB - 58735-000</p>
+        <p class="lh-sm my-0" style="font-size: 14px;" id="email"></p>
+        <p class="lh-sm my-0" style="font-size: 14px;" id="whatsapp">(83) 99347-9973</p>
+      </div>
+      <div class="col-6 mt-2">
+        <p class="fw-bold lh-sm mb-0 text-end" style="font-size: 14px;">Nº Pedido</p>
+        <p class="lh-sm my-0 text-end" style="font-size: 14px;" id="idOrder">#DC0000</p>
+        <p class="fw-bold lh-sm mt-3 mb-0 text-end" style="font-size: 14px;">Data do Pedido</p>
+        <p class="lh-sm my-0 text-end" style="font-size: 14px;" id="orderDate">12 de Jun de 2023</p>
+      </div>
+    </div>
+    <div class="row border-top mt-3">
+      <h2 class="fs-6 mt-3">Resumo do pedido</h2>
+
+      <table class="table table-borderless" style="font-size: 10pt;">
+        <thead class="border-top">
+          <tr>
+            <th scope="col">Nº.</th>
+            <th scope="col">Item</th>
+            <th scope="col">V. Unit.</th>
+            <th scope="col">Quant.</th>
+            <th scope="col" class="text-end">Total</th>
+          </tr>
+        </thead>
+        <tbody id="items">
+        </tbody>
+        <tfoot class="border-top text-end">
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="fw-bold text-end">Subtotal</td>
+            <td class="text-end" id="subtotal">R$ 185,00</td>
+          </tr>
+          <tr class="border-top">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="fw-bold text-end">Taxa de instalação</td>
+            <td class="text-end" id="installation">R$ 00,00</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="fw-bold text-end">Taxa de entrega</td>
+            <td class="text-end" id="delivery">R$ 00,00</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="fw-bold text-end">Descontos</td>
+            <td class="text-end" id="discount">R$ 00,00</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="fw-bold text-end">Total</td>
+            <td class="fw-bold fs-4" id="final">R$ 185,00</td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+    <div class="row">
+      <p style="font-size: 10pt;" class="text-center"><span class="fw-bold">Obs:</span> o pedido será colocado em produção mediante pagamento de 50% do valor total.</p>
+    </div>
+  </div>
+
+  <script>
+    feather.replace();
+  </script>
+  <script src="js/order.js" type="module"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+</body>
+</html>
