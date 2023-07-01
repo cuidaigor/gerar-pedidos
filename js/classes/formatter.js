@@ -43,4 +43,14 @@ export default class Formatter {
 
     return formataValor;
   }
+
+  static formatarData(data) {
+    const numeros = data.replace(/\D/g, '');
+
+    if(numeros.length === 8){
+      return numeros.replace(/(\d{2})(\d{2})(\d{4})/, '$1/$2/$3');
+    }else {
+      return numeros;
+    }
+  }
 }

@@ -25,6 +25,11 @@ const cep = new InputFormatter(
   Formatter.formatarCEP
 );
 
+const orderDate = new InputFormatter(
+  document.getElementById('order-date'),
+  Formatter.formatarData
+);
+
 const unitaryItem = new InputFormatter(
   document.querySelector('#unitary-item-1'),
   (value) => Formatter.formatarMoeda(parseFloat(value.replace(",", ".")))
