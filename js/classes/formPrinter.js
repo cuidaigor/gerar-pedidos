@@ -123,6 +123,14 @@ export default class FormPrinter {
       this.errors['idOrder'] = 'O ID do Pedido deve ter 4 dígitos.';
     }
 
+    //Validar data
+    const date = formValues['order-date'];
+    if(!date){
+      this.errors['order-date'] = 'A data do pedido é obrigatória.';
+    }else if(date && !/^\d{2}\/\d{2}\/\d{4}$/.test(date)){
+      this.errors['order-date'] = 'A data tem um formato inválido.'
+    }
+
     // Validar os Itens
     const items = formValues.items;
     for (const itemId in items) {
