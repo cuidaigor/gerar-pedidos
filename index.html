@@ -24,11 +24,11 @@
           <label for="client" class="form-label">Cliente</label>
         </div>
         <div class="col-md-6 form-floating">
-          <input type="text" class="form-control" id="id-client" name="id-client" placeholder="Exemplo">
+          <input type="text" class="form-control" id="id-client" name="id-client" placeholder="Exemplo" minlength="11" maxlength="14">
           <label for="id-client" class="form-label">CPF/CNPJ</label>
         </div>
         <div class="col-md-6 form-floating">
-          <input type="text" class="form-control" id="whatsapp" name="whatsapp" placeholder="Exemplo">
+          <input type="text" class="form-control" id="whatsapp" name="whatsapp" placeholder="Exemplo" minlength="10" maxlength="11">
           <label for="whatsapp" class="form-label">Whatsapp</label>
         </div>
         <div class="col-md-6 form-floating">
@@ -89,14 +89,18 @@
           <label for="state" class="form-label">Estado</label>
         </div>
         <div class="col-md-3 form-floating">
-          <input type="text" class="form-control" id="cep" name="cep" placeholder="CEP">
+          <input type="text" class="form-control" id="cep" name="cep" placeholder="CEP" maxlength="8">
           <label for="cep" class="form-label">CEP</label>
         </div>
         <hr class="p-0 m-0 mt-2">
         <h6>Detalhes do Pedido</h6>
-        <div class="col-12">
+        <div class="col-6">
           <label for="idOrder" class="form-label">ID do Pedido</label>
-          <input type="text" class="form-control" id="idOrder" name="idOrder" value="0623">
+          <input type="text" class="form-control" id="idOrder" name="idOrder" value="0000" maxlength="4">
+        </div>
+        <div class="col-6">
+          <label for="order-date" class="form-label">Data do Pedido</label>
+          <input type="text" class="form-control" id="order-date" name="order-date" placeholder="DD/MM/AAAA" maxlength="8">
         </div>
         <div class="col-12">
           <label for="item-1" class="form-label">Item</label>
@@ -104,7 +108,7 @@
         </div>
         <div class="col-4">
           <label for="amount-item-1" class="form-label">Quantidade</label>
-          <input type="number" class="form-control" id="amount-item-1" name="amount-item-1">
+          <input type="number" class="form-control" id="amount-item-1" name="amount-item-1" value="1">
         </div>
         <div class="col-4">
           <label for="unitary-item-1" class="form-label">V. Unitário</label>
@@ -128,21 +132,21 @@
           <label for="installation-item" class="form-label">Taxa de Instalação</label>
           <div class="input-group">
             <span class="input-group-text" id="installation-item-group">R$</span>
-            <input type="text" class="form-control input-soma" aria-label="50,00" aria-describedby="installation-item-group" id="installation-item" name="installation-item">
+            <input type="text" class="form-control input-soma" aria-label="50,00" aria-describedby="installation-item-group" id="installation-item" name="installation-item" value="0,00">
           </div>
         </div>
         <div class="col-4">
           <label for="delivery-item" class="form-label">Taxa de Entrega</label>
           <div class="input-group">
             <span class="input-group-text" id="delivery-item-group">R$</span>
-            <input type="text" class="form-control input-soma" aria-label="5,00" aria-describedby="delivery-item-group" id="delivery-item" name="delivery-item">
+            <input type="text" class="form-control input-soma" aria-label="5,00" aria-describedby="delivery-item-group" id="delivery-item" name="delivery-item" value="0,00">
           </div>
         </div>
         <div class="col-4">
           <label for="discount-item" class="form-label">Descontos</label>
           <div class="input-group">
             <span class="input-group-text" id="discount-item-group">R$</span>
-            <input type="text" class="form-control input-soma" aria-label="10,00" aria-describedby="discount-item-group" id="discount-item" name="discount-item">
+            <input type="text" class="form-control input-soma" aria-label="10,00" aria-describedby="discount-item-group" id="discount-item" name="discount-item" value="0,00">
           </div>
         </div>
         <div class="col-12">
