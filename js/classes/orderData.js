@@ -52,8 +52,8 @@ export default class OrderData {
     const isCPF = this.idClient.length == 14 ? true : false;
     const completeAdress = `
                               ${this.address}${this.addressNumber != '' ? ', '+this.addressNumber : ''}
-                              ${this.neighborhood != '' ? '-'+this.neighborhood : ''}
-                              ${this.city != '' ? '- '+this.city+'-'+this.state : ''}
+                              ${this.address != '' ? '- '+this.neighborhood : this.neighborhood}
+                              ${this.neighborhood != '' ? '- '+this.city+'-'+this.state : this.city+'-'+this.state}
                               ${this.cep != '' ? '- '+this.cep : ''}
                           `;
 
@@ -62,9 +62,9 @@ export default class OrderData {
 
     //dados do cliente
     document.getElementById('client').textContent = this.client;
-    if(isCPF){
+    if(this.idClient && isCPF){
       document.getElementById('id-client').innerHTML = `<span class="fw-bold">CPF: </span>${this.idClient}`;
-    }else {
+    }else if(this.idClient && !isCPF) {
       document.getElementById('id-client').innerHTML = `<span class="fw-bold">CNPJ: </span>${this.idClient}`;
     }
     document.getElementById('address').textContent = completeAdress;
