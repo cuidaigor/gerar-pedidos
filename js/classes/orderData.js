@@ -1,3 +1,5 @@
+import Formatter from "./formatter.js";
+
 export default class OrderData {
   constructor() {
     this.client = '';
@@ -12,6 +14,7 @@ export default class OrderData {
     this.state = '';
     this.cep = '';
     this.idOrder = '';
+    this.orderDate = '';
     this.installationItem = '';
     this.deliveryItem = '';
     this.discountItem = '';
@@ -35,6 +38,7 @@ export default class OrderData {
       this.state = parsedData.state;
       this.cep = parsedData.cep;
       this.idOrder = parsedData.idOrder;
+      this.orderDate = parsedData['order-date'];
       this.installationItem = parsedData['installation-item'];
       this.deliveryItem = parsedData['delivery-item'];
       this.discountItem = parsedData['discount-item'];
@@ -70,7 +74,7 @@ export default class OrderData {
     //Dados do pedido
     document.getElementById('idOrderTop').textContent = `Pedido #DC${this.idOrder}`;
     document.getElementById('idOrder').textContent = `Pedido #DC${this.idOrder}`;
-      //alterar data posteriormente
+    document.getElementById('order-date').textContent = Formatter.formatarDataImp(this.orderDate);
 
     //Itens do pedido
     const tbody = document.getElementById('items');

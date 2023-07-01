@@ -53,4 +53,21 @@ export default class Formatter {
       return numeros;
     }
   }
+
+  static formatarDataImp(dataString) {
+    const partes = dataString.split('/');
+    const dia = partes[0];
+    const mes = partes[1];
+    const ano = partes[2];
+
+    const meses = [
+      'Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun',
+      'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'
+    ];
+    const nomeMes = meses[parseInt(mes) - 1];
+
+    const novaDataString = dia + ' de ' + nomeMes + ' de ' + ano;
+
+    return novaDataString;
+  }
 }
