@@ -76,6 +76,22 @@ function dataAtual(){
 }
 document.getElementById('order-date').value = dataAtual();
 
+//Inserir ID como padrão
+const orderData = localStorage.getItem('order-data');
+if(orderData){
+  const parseData = JSON.parse(orderData);
+  const valueCount = String(parseInt(parseData.idOrder)+1);
+  if(valueCount.length === 4){
+    document.getElementById('idOrder').value = valueCount;
+  }else if(valueCount.length === 3){
+    document.getElementById('idOrder').value = `0${valueCount}`;
+  }else if(valueCount.length === 2){
+    document.getElementById('idOrder').value = `00${valueCount}`;
+  }else if(valueCount.length === 1){
+    document.getElementById('idOrder').value = `000${valueCount}`;
+  }
+}
+
 //************************************************************************ */
 
 //Calculo do Valor Unitário e Valor Total do item existente
