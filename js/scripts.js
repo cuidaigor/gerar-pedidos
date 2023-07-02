@@ -65,6 +65,17 @@ const final = new InputFormatter(
   (value) => Formatter.formatarMoeda(parseFloat(value.replace(",", ".")))
 );
 
+//Inserir data de hoje como padrão
+function dataAtual(){
+  const dataAtual = new Date();
+  const dia = String(dataAtual.getDate()).padStart(2, '0');
+  const mes = String(dataAtual.getMonth() + 1).padStart(2, '0');
+  const ano = dataAtual.getFullYear();
+
+  return dia + '/' + mes + '/' + ano;
+}
+document.getElementById('order-date').value = dataAtual();
+
 //************************************************************************ */
 
 //Calculo do Valor Unitário e Valor Total do item existente
