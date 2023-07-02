@@ -44,6 +44,10 @@ export default class Formatter {
     return formataValor;
   }
 
+  static formatarIdOrder(id){
+    return id.replace(/\D/g, '');
+  }
+
   static formatarData(data) {
     const numeros = data.replace(/\D/g, '');
 

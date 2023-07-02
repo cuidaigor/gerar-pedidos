@@ -25,6 +25,11 @@ const cep = new InputFormatter(
   Formatter.formatarCEP
 );
 
+const idOrder = new InputFormatter(
+  document.getElementById('idOrder'),
+  Formatter.formatarIdOrder
+);
+
 const orderDate = new InputFormatter(
   document.getElementById('order-date'),
   Formatter.formatarData
