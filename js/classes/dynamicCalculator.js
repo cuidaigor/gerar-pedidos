@@ -32,8 +32,11 @@ export default class DynamicCalculator{
 
     let somaItens = 0;
     for (const item of totalItems) {
-      const valorItem = parseFloat(item.value.replace(',', '.')) ?? 0;
-      somaItens += valorItem;
+      const removeDot = item.value.replace(/\./g, '');
+      const valorItem = parseFloat(removeDot.replace(',', '.')) ?? 0;
+      if(!isNaN(valorItem)){
+        somaItens += valorItem;
+      }
     }
 
     const valorInstallation = parseFloat(installationItem.value.replace(',', '.')) || 0;
