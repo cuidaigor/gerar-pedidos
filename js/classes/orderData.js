@@ -15,6 +15,7 @@ export default class OrderData {
     this.cep = '';
     this.idOrder = '';
     this.orderDate = '';
+    this.subtotal = '';
     this.installationItem = '';
     this.deliveryItem = '';
     this.discountItem = '';
@@ -39,6 +40,7 @@ export default class OrderData {
       this.cep = parsedData.cep;
       this.idOrder = parsedData.idOrder;
       this.orderDate = parsedData['order-date'];
+      this.subtotal = parsedData.subtotal;
       this.installationItem = parsedData['installation-item'];
       this.deliveryItem = parsedData['delivery-item'];
       this.discountItem = parsedData['discount-item'];
@@ -99,7 +101,7 @@ export default class OrderData {
     });
 
     //Valores adicionais e finais do pedido
-      //alterar subtotal posteriormente
+    document.getElementById('subtotal').textContent = `R$ ${this.subtotal}`;
     document.getElementById('installation').textContent = `R$ ${this.installationItem}`;
     document.getElementById('delivery').textContent = `R$ ${this.deliveryItem}`;
     document.getElementById('discount').textContent = `R$ ${this.discountItem}`;

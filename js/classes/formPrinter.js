@@ -1,3 +1,5 @@
+import Formatter from "./formatter.js";
+
 export default class FormPrinter {
   constructor(formId) {
     this.formId = formId;
@@ -14,7 +16,9 @@ export default class FormPrinter {
     const formData = new FormData(this.form);
     const formValues = Object.fromEntries(formData.entries());
 
-    const items = {};
+    let items = {};
+
+    let subtotal = 0;
 
     for (const key in formValues) {
       if (key.startsWith('item-')) {
@@ -37,8 +41,20 @@ export default class FormPrinter {
       }
     }
 
+    for (const key in items) {
+      if (items.hasOwnProperty(key)) {
+        const item = items[key];
+        const removeDot = item.total.replace(/\./g, '');
+        const valueItem = parseFloat(removeDot.replace(',', '.')) ?? 0;
+        if(!isNaN(valueItem)){
+          subtotal += valueItem;
+        }
+      }
+    }
+
     const organizedFormValues = {
       ...formValues,
+      subtotal: Formatter.formatarMoeda(subtotal),
       items: items
     };
 
