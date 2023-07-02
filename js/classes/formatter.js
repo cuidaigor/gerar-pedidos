@@ -34,14 +34,18 @@ export default class Formatter {
   }
 
   static formatarMoeda(valor) {
-    let formataValor = valor.toFixed(2);
-    formataValor = formataValor.replace(".", ",");
+    if(!isNaN(valor)){
+      let formataValor = valor.toFixed(2);
+      formataValor = formataValor.replace(".", ",");
 
-    const partes = formataValor.split(",");
-    partes[0] = partes[0].replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-    formataValor = partes.join(",");
+      const partes = formataValor.split(",");
+      partes[0] = partes[0].replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+      formataValor = partes.join(",");
 
-    return formataValor;
+      return formataValor;
+    }else {
+      return '0,00';
+    }
   }
 
   static formatarIdOrder(id){
