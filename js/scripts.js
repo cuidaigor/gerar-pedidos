@@ -4,6 +4,14 @@ import InputFormatter from './classes/inputFormatter.js';
 import DynamicCalculator from './classes/dynamicCalculator.js';
 import FormPrinter from './classes/formPrinter.js';
 
+//PRELOAD
+window.addEventListener('load', () => {
+  const preload = document.getElementById('preload');
+  preload.classList.remove('d-flex');
+  preload.classList.add('d-none');
+});
+
+//************************************************************************
 //CHAMADA DE ADIÇÃO E REMOÇÃO DE ITENS DINAMICAMENTE
 const itemManager = new ItemManager();
 
