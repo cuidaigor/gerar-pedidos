@@ -24,6 +24,17 @@ export default class DynamicCalculator{
   }
 
   calculateFinalItem() {
+    function removeDot(value){
+      const removed = value.replace(/\./g, '');
+      const finalValue = parseFloat(removed.replace(',', '.')) ?? 0;
+
+      if(!isNaN(finalValue)){
+        return finalValue;
+      }else {
+        return false;
+      }
+    }
+
     const totalItems = document.querySelectorAll('.input-currency');
     const installationItem = document.getElementById('installation-item');
     const deliveryItem = document.getElementById('delivery-item');
@@ -32,16 +43,15 @@ export default class DynamicCalculator{
 
     let somaItens = 0;
     for (const item of totalItems) {
-      const removeDot = item.value.replace(/\./g, '');
-      const valorItem = parseFloat(removeDot.replace(',', '.')) ?? 0;
+      const valorItem = removeDot(item.value);
       if(!isNaN(valorItem)){
         somaItens += valorItem;
       }
     }
 
-    const valorInstallation = parseFloat(installationItem.value.replace(',', '.')) || 0;
-    const valorDelivery = parseFloat(deliveryItem.value.replace(',', '.')) || 0;
-    const valorDiscount = parseFloat(discountItem.value.replace(',', '.')) || 0;
+    const valorInstallation = removeDot(installationItem.value);
+    const valorDelivery = removeDot(deliveryItem.value);
+    const valorDiscount = removeDot(discountItem.value);
 
     const totalFinal = somaItens - valorDiscount + valorInstallation + valorDelivery;
     finalItem.value = Formatter.formatarMoeda(totalFinal);
