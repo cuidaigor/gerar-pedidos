@@ -1,6 +1,6 @@
 # Sistema de Impressão de Pedidos
 
-> Status: Em desenvolvimento
+> Status: Fazendo melhorias
 
 ## Descrição
 
