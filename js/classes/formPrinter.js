@@ -141,10 +141,18 @@ export default class FormPrinter {
 
     //Validar data
     const date = formValues['order-date'];
+    const dataAtual = new Date();
+    const anoAtual = dataAtual.getFullYear();
     if(!date){
       this.errors['order-date'] = 'A data do pedido é obrigatória.';
     }else if(date && !/^\d{2}\/\d{2}\/\d{4}$/.test(date)){
       this.errors['order-date'] = 'A data tem um formato inválido.'
+    }else if(parseInt(date.substring(0, 2)) === 0 || parseInt(date.substring(0, 2)) > 31){
+      this.errors['order-date'] = 'O dia é inválido.';
+    }else if(parseInt(date.substring(3, 5)) === 0 || parseInt(date.substring(3, 5)) > 12){
+      this.errors['order-date'] = 'O mês é inválido.';
+    }else if(parseInt(date.substring(6, 10)) === 0 || parseInt(date.substring(6, 10)) > anoAtual || parseInt(date.substring(6, 10)) < 2019){
+      this.errors['order-date'] = 'O ano é inválido.';
     }
 
     // Validar os Itens
