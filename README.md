@@ -41,6 +41,10 @@ cd gerar-pedidos
 
 Contribuições são bem-vindas! Se encontrar algum problema ou tiver sugestões de melhorias, abra uma issue ou envie um pull request.
 
+## License
+
+Este projeto está licenciado sob o [MIT License](LICENSE).
+
 ## Contato
 
 Para mais informações, entre em contato (srlee@cc.ci.ufpb.br).
